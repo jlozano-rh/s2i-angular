@@ -1,5 +1,15 @@
 FROM registry.access.redhat.com/ubi8/httpd-24
 
+MAINTAINER Juan Lozano <jlozano@redhat.com>
+
+LABEL summary="Platform for building and running Angular applications" \
+      io.k8s.description="OpenShift S2I builder image for Angular apps using Angular CLI and Apache httpd 2.4." \
+      io.k8s.display-name="Angular S2I httpd" \
+      io.openshift.expose-services="8080:http" \
+      io.openshift.tags="builder,angular" \
+      com.redhat.dev-mode="DEV_MODE:false" \
+      com.redhat.deployments-dir="/opt/app-root/src"
+
 ENV NODEJS_VERSION=14 \
     PATH=$HOME/node_modules/.bin/:$HOME/.npm-global/bin/:$PATH \
     NPM_CONFIG_LOGLEVEL=info \
