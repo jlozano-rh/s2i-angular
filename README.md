@@ -21,4 +21,4 @@ $ docker run -p 8080:8080 angular-test-app
 
 # Tekton Task
 
-Inside `./tekton/` folder, exist a YAML file with a generic task (based on buildah and nginx) to build an Angular application. This task only use official Red Hat images (like Nodejs and Nginx) to package all the application into a single lightweight docker image.
+Inside `./tekton/` folder, exist a YAML file with a generic task (based on buildah and nginx) to build an Angular application and avoid to use a custom s2i builder image. This task only use official Red Hat images (like Nodejs and Nginx) to package all the application into a single lightweight docker image.
