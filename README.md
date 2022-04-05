@@ -18,3 +18,7 @@ $ docker run -p 8080:8080 angular-test-app
 ```
 
 > **Note:** you can import the builder imagen into your OpenShift cluster with `oc import-image --confirm [docker|quay|any].registry.com/your-user/s2i-angular-httpd --reference-policy local -n openshift`.
+
+# Tekton Task
+
+Inside `./tekton/` folder, exist a YAML file with a generic task (based on buildah and nginx) to build an Angular application. This task only use official Red Hat images (like Nodejs and Nginx) to package all the application into a single lightweight docker image.
